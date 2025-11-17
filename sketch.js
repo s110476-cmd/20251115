@@ -433,7 +433,7 @@ function setup() {
         background: rgba(255,255,255,0.12);
         color: #fff;
       ">關閉</button>
-      <iframe src="https://hackmd.io/@RXcou08ERlul7o47xjnHCg/HkvNLsrkZl" style="width:100%;height:100%;border:0;" allowfullscreen></iframe>
+      <iframe src="https://www.et.tku.edu.tw/" style="width:100%;height:100%;border:0;" allowfullscreen></iframe>
     `;
     document.body.appendChild(overlay);
     document.getElementById('closeIframeET').addEventListener('click', ()=> overlay.remove());
@@ -501,17 +501,12 @@ function draw() {
   
   // --------------------- 繪製學號與姓名 ---------------------
   let ID_size = TKU_size / 3; // 1/3 的大小
-  let gap = ID_size * 0.5; // 半行間距
+  let gap = ID_size * 0.5; // 半行間距 (提供視覺上的空行效果)
 
-  // 計算學號的 Y 座標 (ID Line Y): 
-  // 從淡江大學的中心 (currentTextY) 往下移動:
-  // (淡江大學文字半高) + (間距) + (學號文字半高)
+  // 計算學號的 Y 座標
   let y_id = currentTextY + (TKU_size / 2) + gap + (ID_size / 2);
 
-  // 計算姓名的 Y 座標 (Name Line Y):
-  // 從學號的中心 (y_id) 往下移動:
-  // (學號文字半高) + (間距) + (姓名文字半高) 
-  // 等於 y_id + ID_size + gap
+  // 計算姓名的 Y 座標
   let y_name = y_id + ID_size + gap;
 
   // 設定學號與姓名文字樣式 (字體延用 Rampart One)
